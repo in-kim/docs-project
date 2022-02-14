@@ -1,6 +1,7 @@
 {
   "name": "docs-website",
   "version": "0.1.0",
+  "private": false,
   "homepage":"https://in-kim.github.io/docs-project",  
   "scripts": {
     "serve": "vue-cli-service serve",
