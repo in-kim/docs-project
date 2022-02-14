@@ -1,27 +1,34 @@
-@import '../color.scss';
+@import "../color.scss";
 
-.navbar__wrapper{
-    position:relative; 
-    z-index: 100;
+.navbar__wrapper {
+  position: relative;
+  z-index: 100;
 
-    & > .navbar{
-        display: flex; justify-content: space-between; align-items: center;
-        height:62px;
-        background-image: linear-gradient(
-90deg
-, #39c5ce 19%, #4f86cd 83%);
-        padding:0 16px; box-sizing: border-box;
+  & > .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 62px;
+    background-color: #24292e;
+    padding: 0 16px;
+    box-sizing: border-box;
 
-        & > .left, & > .right, & > .center{
-            display: flex; align-items: center; gap:10px;
-        }
-
-        & .search__wrapper{
-            display: flex; align-items: center;
-
-            & > .form-inline{
-                display: flex; align-items: center;
-            }
-        }
+    & > .left,
+    & > .right,
+    & > .center {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
+
+    & .search__wrapper {
+      display: flex;
+      align-items: center;
+
+      & > .form-inline {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
 }
