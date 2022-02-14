@@ -1,0 +1,41 @@
+@import "./header.scss";
+@import "./side-bar.scss";
+
+.wrapper {
+  height: 100%;
+  .content {
+    height: calc(100% - 62px);
+    padding:20px 48px;
+    overflow: auto;
+
+    &.side-open {
+      box-sizing: border-box;
+
+      animation-name: open;
+      animation-duration: 0.4s;
+      animation-fill-mode: forwards;
+    }
+    &.side-close {
+      animation-name: close;
+      animation-duration: 0.4s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes open {
+      0% {
+        padding-left: 48px;
+      }
+      100% {
+        padding-left: calc(271px + 48px); // 좌측 여백
+      }
+    }
+    @keyframes close {
+      0% {
+        padding-left: calc(271px + 48px); // 좌측 여백
+      }
+      100% {
+        padding-left: 48px;
+      }
+    }
+  }
+}

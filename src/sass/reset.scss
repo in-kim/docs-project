@@ -1,0 +1,22 @@
+@import "./color.scss";
+html,
+body {
+  height: 100%;
+  overflow: auto;
+}
+
+button {
+  background: transparent;
+  padding: 0;
+  outline: none;
+  border: 0;
+}
+
+#app {
+  height: 100%;
+}
+
+a {
+  // color:$default-font-color;
+  text-decoration: none;
+}

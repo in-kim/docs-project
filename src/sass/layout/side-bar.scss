@@ -1,0 +1,62 @@
+@import "../color.scss";
+.sidebar__wrapper {
+  & .sidebar__button {
+    color: #fff;
+  }
+
+  & .sidebar__content {
+    & .b-sidebar {
+      top: 62px;
+      width: 272px;
+      border-right: 1px solid #dbdbdb;
+    }
+  }
+
+  & .sidemenu__wrapper {
+    padding: 15px 0;
+
+    & > ul {
+      padding: 0;
+      & li {
+        font-size: 16px;
+        color: $sidemenu-font-color;
+
+        list-style: none;
+        padding: 8px 8px 8px 20px;
+
+        cursor: pointer;
+
+        // sidemenu menu list 링크 text
+        & a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          font-size: inherit;
+          color: inherit;
+        }
+
+        &:hover {
+          background-color: $sidemenu-hover-color;
+          color: $sidemenu-font-acitve-color;
+        }
+        &.active {
+          color: $sidemenu-font-acitve-color;
+        }
+
+        & > span {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        // detps 2
+        & > ul {
+          padding-left: 16px;
+          & > li {
+            font-size: 14px;
+            padding: 8px 0;
+          }
+        }
+      }
+    }
+  }
+}
