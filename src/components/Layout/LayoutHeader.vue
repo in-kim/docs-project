@@ -3,19 +3,18 @@
     <b-navbar toggleable="lg" type="dark">
       <section class="left">
         <!-- side bar start -->
-        <side-bar :isSidebarActive="isSidebarActive" :handleContentPadding="handleContentPadding"></side-bar>
+        <side-bar
+          :isSidebarActive="isSidebarActive"
+          :handleContentPadding="handleContentPadding"
+        ></side-bar>
         <!-- side bar end -->
 
         <!-- logo start -->
         <b-navbar-brand href="#">
-          OSC KOREA
+          DOCS
           <!-- <img src="https://uploads-ssl.webflow.com/5f3b26c2b3bde9e2894607e8/6049a6bd314be972946af637_OSC%20Korea%20CI%20blue.svg" alt=""> -->
         </b-navbar-brand>
         <!-- logo end -->
-
-        <!-- menu list -->
-        <menu-list />
-        <!-- menu list -->
       </section>
 
       <!-- center start -->
@@ -49,24 +48,22 @@
 
 <script>
 import SideBar from "@/components/Layout/SideBar";
-import MenuList from '@/components/Layout/MenuList';
-import Search from '@/components/Layout/Search';
+import Search from "@/components/Layout/Search";
 export default {
   name: "layout-header",
-  props:{
-    isSidebarActive:{
-      type:Boolean,
-      description:'siebar 오픈 여부'
+  props: {
+    isSidebarActive: {
+      type: Boolean,
+      description: "siebar 오픈 여부",
     },
-    handleContentPadding:{
-      type:Function,
-      description:'컨텐츠 좌측 패딩 컨트롤'
-    }
+    handleContentPadding: {
+      type: Function,
+      description: "컨텐츠 좌측 패딩 컨트롤",
+    },
   },
   components: {
     SideBar,
-    MenuList,
-    Search
+    Search,
   },
 };
 </script>

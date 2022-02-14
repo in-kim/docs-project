@@ -1,34 +1,34 @@
 # Button
 
-> osc korea template 버튼을 사용하려면 구성요소 `<osc-button>`을 include 하십쇼.
-> osc korea template 버튼은 상황별 크기, 변형, 상태를 지원 합니다..
+> Use Bootstrap's custom `b-button` component for actions in forms, dialogs, and more. Includes
+> support for a handful of contextual variations, sizes, states, and more.
 
 ## Overview
 
-OSC Korea button 구성 요소는 `<osc-button>` component 를 사용하여 `<button>` 요소, `<a>` 요소, 또는
-`<router-link>` 구성 요소를 생성한다.
+BootstrapVue's `<b-button>` component generates either a `<button>` element, `<a>` element, or
+`<router-link>` component with the styling of a button.
 
 ```html
 <div>
-  <osc-button>Button</osc-button>
-  <osc-button variant="danger">Button</osc-button>
-  <osc-button variant="success">Button</osc-button>
-  <osc-button variant="outline-primary">Button</osc-button>
+  <b-button>Button</b-button>
+  <b-button variant="danger">Button</b-button>
+  <b-button variant="success">Button</b-button>
+  <b-button variant="outline-primary">Button</b-button>
 </div>
 
 <!-- b-button.vue -->
 ```
 
-## 반환요소 유형
+## Element type
 
-`<osc-button>` 구성요소는 일반적으로 `<button>` 요소를 렌더링 한다.
-href prop value가 있다면 `<a>` 요소 를 렌더링 할 수 있다.
-`to` prop value가 있다면 `vue-router` `<router-link>` 렌더링 한다.
+The `<b-button>` component generally renders a `<button>` element. However, you can also render an
+`<a>` element by providing an `href` prop value. You may also generate `vue-router` `<router-link>`
+when providing a value for the `to` prop (`vue-router` is required).
 
 ```html
 <div>
-  <osc-button>I am a Button</osc-button>
-  <osc-button href="#">I am a Link</osc-button>
+  <b-button>I am a Button</b-button>
+  <b-button href="#">I am a Link</b-button>
 </div>
 
 <!-- b-button-types.vue -->
@@ -36,37 +36,36 @@ href prop value가 있다면 `<a>` 요소 를 렌더링 할 수 있다.
 
 ## Type
 
-button type(`'submit'`, `'reset'`, ....)을 지정 할 수 있습니다.
+You can specify the button's type by setting the prop `type` to `'button'`, `'submit'` or `'reset'`.
+The default type is `'button'`.
 
-`type` prop는 `href` 또 `to` props value값이 유효할때 아무런 영향을 미치지 않습니다.
+Note the `type` prop has no effect when either `href` or `to` props are set.
 
 ## Sizing
 
-`size` prop 지정을 통해 `lg` 또는 `sm` size를 지정할 수 있습니다.
+Fancy larger or smaller buttons? Specify `lg` or `sm` via the `size` prop.
 
 ```html
 <b-row>
-  <b-col lg="4" class="pb-2"
-    ><osc-button size="sm">Small Button</osc-button></b-col
-  >
-  <b-col lg="4" class="pb-2"><osc-button>Default Button</osc-button></b-col>
-  <b-col lg="4" class="pb-2"
-    ><osc-button size="lg">Large Button</osc-button></b-col
-  >
+  <b-col lg="4" class="pb-2"><b-button size="sm">Small Button</b-button></b-col>
+  <b-col lg="4" class="pb-2"><b-button>Default Button</b-button></b-col>
+  <b-col lg="4" class="pb-2"><b-button size="lg">Large Button</b-button></b-col>
 </b-row>
 
-<!-- osc-button-sizes.vue -->
+<!-- b-button-sizes.vue -->
 ```
 
-## 상황별 버튼
+## Contextual variants
 
-`variant` prop 설정으로 상황별 버튼을 생성 할 수 있습니다..
+Use the `variant` prop to generate the various Bootstrap contextual button variants.
 
-기본적으로 `<osc-button>` 은 `secondary` variant 반환합니다..
+By default `<b-button>` will render with the `secondary` variant.
 
-### variants color 종류
+The `variant` prop adds the Bootstrap v4.3 class `.btn-<variant>` on the rendered button.
 
-`primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light`, `dark`.
+### Solid color variants
+
+`primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light` and `dark`.
 
 ```html
 <div>
@@ -83,13 +82,13 @@ button type(`'submit'`, `'reset'`, ....)을 지정 할 수 있습니다.
 <!-- b-button-solid.vue -->
 ```
 
-### 윤곽선 있는 버튼
+### Outline color variants
 
-배경색이 없고 윤곽선만 있는 버튼을 사용하고 싶을때 `outline-*` 커스텀을 이용해 윤곽선만 있는 버튼을 사용할 수 있습니다.
-`outline-*` 커스텀을 할 경우 모든 배경이미지와 색상을 제거 합니다. `<b-button>`:
+In need of a button, but not the hefty background colors they bring? Use the `outline-*` variants to
+remove all background images and colors on any `<b-button>`:
 
 `outline-primary`, `outline-secondary`, `outline-success`, `outline-danger`, `outline-warning`,
-`outline-info`, `outline-light` , `outline-dark`.
+`outline-info`, `outline-light` and `outline-dark`.
 
 ```html
 <div>
@@ -108,7 +107,8 @@ button type(`'submit'`, `'reset'`, ....)을 지정 할 수 있습니다.
 
 ### Link variant
 
-Variant `link` value는 버튼의 패딩과 크기 기본값을 유지하면서 링크 모양의 버튼을 렌더링 한다.
+Variant `link` will render a button with the appearance of a link while maintaining the default
+padding and size of a button.
 
 ```html
 <div>
@@ -118,11 +118,13 @@ Variant `link` value는 버튼의 패딩과 크기 기본값을 유지하면서 
 <!-- b-button-link.vue -->
 ```
 
-**Tip:** `text-decoration-none` prop를 추가하여 링크 버튼에 호버 밑줄을 제거 할 수 있다.
+**Tip:** remove the hover underline from a link variant button by adding the Bootstrap v4.3 utility
+class `text-decoration-none` to `<b-button>`.
 
 ## Block level buttons
 
-`block` prop를 지정하여 부모의 영역을 모두 차지하는 블록을 만들 수 있다.
+Create block level buttons — those that span the full width of a parent — by setting the `block`
+prop.
 
 ```html
 <div>
@@ -134,7 +136,7 @@ Variant `link` value는 버튼의 패딩과 크기 기본값을 유지하면서 
 
 ## Pill style
 
-둥근형태의 버튼을 만들고 싶다면 `pill` prop를 지정하면 된다.
+Prefer buttons with a more rounded-pill style? Just set the prop `pill` to true.
 
 ```html
 <div>
@@ -149,9 +151,11 @@ Variant `link` value는 버튼의 패딩과 크기 기본값을 유지하면서 
 <!-- b-button-pill.vue -->
 ```
 
+This prop adds the Bootstrap v4.3 utility class `.rounded-pill` on the rendered button.
+
 ## Squared style
 
-정사각형의 버튼을 만들고 싶다면 `squared` prop를 지정하면 된다.
+Prefer buttons with a more square corner style? Just set the prop `squared` to true.
 
 ```html
 <div>
@@ -166,10 +170,13 @@ Variant `link` value는 버튼의 패딩과 크기 기본값을 유지하면서 
 <!-- b-button-square.vue -->
 ```
 
+The `squared` prop adds the Bootstrap v4.3 utility class `.rounded-0` on the rendered button. The
+`pill` prop takes precedence over the `squared` prop.
+
 ## Disabled state
 
-disabled 상태를 원한다면 `disabled` prop 설정하면 된다.
-`<a>` 요소와 `<router-link>` 요소에서도 `disabled`로 렌더링 한다.
+Set the `disabled` prop to disable button default functionality. `disabled` also works with buttons
+rendered as `<a>` elements and `<router-link>` (i.e. with the `href` or `to` prop set).
 
 ```html
 <div>
@@ -182,15 +189,17 @@ disabled 상태를 원한다면 `disabled` prop 설정하면 된다.
 
 ## Pressed state and toggling
 
-prop `pressed` ture를 지정하게 되면 버튼을 눌렀을 때 배경이 지정 됩니다.
+Buttons will appear pressed (with a darker background, darker border, and inset shadow) when the
+prop `pressed` is set to `true`.
 
-`pressed` prop
+The `pressed` prop can be set to one of three values:
 
-- `true`: `.active` class 클래스를 설정하고 `aria-pressed="true"` 속성을 추가한다.
-- `false`: `.active` class 클래스를 지우고 `aria-pressed="false"` 속성을 추가한다.
-- `null`: (default) `.active` 클래스와 `aria-pressed` 속성이 설정되지 않습니다.
+- `true`: Sets the `.active` class and adds the attribute `aria-pressed="true"`.
+- `false`: Clears the `.active` class and adds the attribute `aria-pressed="false"`.
+- `null`: (default) Neither the class `.active` nor the attribute `aria-pressed` will be set.
 
-활성 상태와 비활성 상태간에 전환할 수 있는 버튼을 만드려면 `.sync` prop를 사용하면 된다.
+To create a button that can be toggled between active and non-active states, use the `.sync` prop
+modifier (available in Vue 2.3+) on the `pressed` property
 
 ```html
 <template>
@@ -239,29 +248,34 @@ prop `pressed` ture를 지정하게 되면 버튼을 눌렀을 때 배경이 지
   };
 </script>
 
-<!-- b-pressed.vue -->
+<!-- b-button-toggles.vue -->
 ```
 
-## Properties
+If using toggle button style for a radio or checkbox style interface, it is best to use the built-in
+`button` style support of [`<b-form-radio-group>`](/docs/components/form-radio) and
+[`<b-form-checkbox-group>`](/docs/components/form-checkbox).
 
-| Property       | Type               | Default     | Description                                                                                                                                                                                                        |
-| -------------- | ------------------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `active`       | `Boolean`          | `false`     | When set to `true`, places the component in the active state with active styling                                                                                                                                   |
-| `active-class` | `String`           | ` `         | <router-link> prop: Configure the active CSS class applied when the link is active. Typically you will want to set this to class name 'active'                                                                     |
-| `block`        | `Boolean`          | `false`     | Renders a 100% width button (expands to the width of its parent container)                                                                                                                                         |
-| `disabled`     | `Boolean`          | `false`     | When set to `true`, disables the component's functionality and places it in a disabled state                                                                                                                       |
-| `href`         | `String`           | ` `         | <b-link> prop: Denotes the target URL of the link for standard a links                                                                                                                                             |
-| `pill`         | `Boolean`          | `false`     | Boolean false Renders the button with the pill style appearance when set to 'true'                                                                                                                                 |
-| `rel`          | `String`           | `null`      | String null <b-link> prop: Sets the `rel` attribute on the rendered link                                                                                                                                           |
-| `target`       | `String`           | `_self`     | <b-link> prop: Sets the `target` attribute on the rendered link                                                                                                                                                    |
-| `size`         | `String`           | ` `         | Set the size of the component's appearance. 'sm', 'md' (default), or 'lg'                                                                                                                                          |
-| `squared`      | `Boolean`          | `false`     | Renders the button with non-rounded corners when set to 'true'                                                                                                                                                     |
-| `to`           | `Object or String` | `100%`      | <router-link> prop: Denotes the target route of the link. When clicked, the value of the to prop will be passed to `router.push()` internally, so the value can be either a string or a Location descriptor object |
-| `type`         | `String`           | `button`    | The value to set the button's 'type' attribute to. Can be one of 'button', 'submit', or 'reset'                                                                                                                    |
-| `variant`      | `String`           | `secondary` | Applies one of the Bootstrap theme color variants to the component                                                                                                                                                 |
+## Router link support
 
-## Event
+Refer to the [`Router support`](/docs/reference/router-links) reference docs for the various
+supported `<router-link>` related props.
 
-| Event   | Arguments                 | Description                              |
-| ------- | ------------------------- | ---------------------------------------- |
-| `click` | Native click event object | Emitted when non-disabled button clicked |
+## Accessibility
+
+When the `href` prop is set to `'#'`, `<b-button>` will render a link (`<a>`) element with attribute
+`role="button"` set and appropriate keydown listeners (<kbd>Enter</kbd> and <kbd>Space</kbd>) so
+that the link acts like a native HTML `<button>` for screen reader and keyboard-only users. When
+disabled, the `aria-disabled="true"` attribute will be set on the `<a>` element.
+
+When the `href` is set to any other value (or the `to` prop is used), `role="button"` will not be
+added, nor will the keyboard event listeners be enabled.
+
+## See also
+
+- [`<b-button-group>`](/docs/components/button-group)
+- [`<b-button-toolbar>`](/docs/components/button-toolbar)
+- [`<b-link>`](/docs/components/link)
+- [Router Link Support](/docs/reference/router-links)
+- [Color Variants](/docs/reference/color-variants)
+
+<!-- Component reference added automatically from component package.json -->
