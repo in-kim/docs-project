@@ -6,8 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "predeploy": "npm run build",
-		"deploy": "gh-pages -d build"
+		"deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "homepage" : "https://in-kim.github.io/docs-project",
   "dependencies": {
