@@ -28,7 +28,7 @@ npm run lint
 
 ### Web site
 
-DOCS [DOCS](https://frosty-goldstine-05a1c8.netlify.app/)
+[DOCS](https://frosty-goldstine-05a1c8.netlify.app/)
 
 ### Reference
 
